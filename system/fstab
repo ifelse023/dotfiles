@@ -1,0 +1,19 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/nvme0n1p2
+UUID=930182d3-482f-429a-81bc-c2c12a4ddce3   /           ext4        rw,noatime,commit=120   0 1
+
+# /dev/nvme0n1p1
+UUID=4C71-E927          /boot       vfat        rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro   0 2
+
+# /dev/nvme0n1p3
+UUID=f16df742-5a5f-471b-afb7-0820514607ad   /home       ext4        rw,noatime,commit=120   0 2
+
+# tempfs - firefox
+tmpfs /home/wasd/.mozilla/firefox/0w29uqj2.default-nightly tmpfs size=512M,user,exec,uid=1000,gid=1000 0 0
+
+UUID=B21A-DDB0                            /boot          vfat    defaults,noatime 0 2
+UUID=5355aea9-394b-4f67-afbc-c9dd3fbaef26 /              ext4    defaults,noatime,commit=60 0 1
+tmpfs                                     /tmp           tmpfs   defaults,noatime,mode=1777 0 0
