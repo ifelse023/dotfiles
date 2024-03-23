@@ -12,4 +12,3 @@ sudo pacman -Syu --needed base-devel mold sccache reflector python ccache neovim
 sudo cp -r ~/dotfiles/system/makepkg.conf /etc/makepkg.conf
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup default nightly

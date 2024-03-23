@@ -83,7 +83,6 @@ networking_and_security_tools = [
     "hyperfine",
     "linux-cachyos",
     "linux-cachyos-headers",
-    "firefox-nightly",
     "wireless-regdb"
 ]
 
@@ -126,7 +125,6 @@ aur_packages = [
    "nwg-look-bin",
     "keyd",
     "brillo",
-    "catppuccin-gtk-theme-mocha",
     "bibata-cursor-theme",
     "irqbalance",
     "tofi-git",
