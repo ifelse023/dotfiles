@@ -39,7 +39,6 @@ fonts_and_theming = [
 
 hardware_packages = [
     "linux-firmware",
-    "rtkit",
     "mold",
     "acpid",  # Advanced Configuration and Power Interface event daemon.
     "pavucontrol",
@@ -75,7 +74,6 @@ networking_and_security_tools = [
    "iwd",  # Internet Wireless Daemon.
     "nss-mdns",  # glibc plugin providing host name resolution via mDNS.
     "openssh",  # Premier connectivity tool for remote login with the SSH protocol.
-    "avahi",
     "profile-sync-daemon",
     "sccache",
     "obsidian",
