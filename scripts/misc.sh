@@ -8,7 +8,6 @@ sudo systemctl enable keyd
 sudo systemctl unmask power-profiles-daemon.service
 sudo systemctl enable power-profiles-daemon.service
 
-
 sudo systemctl disable bluetooth
 sudo systemctl mask bluetooth
 

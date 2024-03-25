@@ -101,7 +101,6 @@ desktop_and_user_interface_tools = [
     "hyprpaper",
     "xdg-desktop-portal-hyprland",
     "firefox-nightly",
-    "arc-gtk-theme"
 ]
 
 terminal_and_shell_tools = [
@@ -127,6 +126,7 @@ aur_packages = [
     "irqbalance",
     "tofi-git",
     "uksmd",
+    "catppuccin-gtk-theme-mocha"
 ]
 
 
