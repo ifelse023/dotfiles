@@ -16,3 +16,11 @@ def filter_rg [
         $command_result.stderr
     ] | str join "\n" | rg $pattern ...$rg_args
 }
+
+def e [xyz: string] {
+    fd $xyz -X nvim
+}
+
+def e-pattern [pattern]  {
+    ^fd -g $pattern -X nvim
+}

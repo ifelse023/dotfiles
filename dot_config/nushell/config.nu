@@ -263,7 +263,7 @@ $env.config = {
 }
 use ~/.cache/starship/init.nu
 source ~/.cache/.zoxide.nu
-source ./alias.nu
-source ./functions.nu
+source ~/architect/dotfiles/config/nushell/env.nu
+source ~/architect/dotfiles/config/nushell/alias.nu
+source ~/architect/dotfiles/config/nushell/functions.nu
 source ~/.cache/carapace/init.nu
-source ./theme/catppuccin_mocha.nu
