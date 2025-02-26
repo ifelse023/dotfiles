@@ -1,6 +1,6 @@
 #=== General Settings ===
 font-size = 16
-theme = tokyo-custom
+theme = tokyonight_night
 window-decoration = false
 window-padding-x = 6
 window-padding-y = 8
