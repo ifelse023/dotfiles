@@ -2,7 +2,7 @@ $env.CARAPACE_BRIDGES = 'zsh,fish'
 $env.PATH = ($env.PATH | uniq)
 
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/wasd/architect/scripts")
-$env.GOPATH = "~/.go"
+$env.GOPATH = "/home/wasd/.go"
 $env.LS_COLORS = (vivid generate tokyonight-night)
 $env.MOAR = "--no-linenumbers"
 $env.PAGER = "/usr/bin/moar"
