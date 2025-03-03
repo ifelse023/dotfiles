@@ -260,7 +260,17 @@ $env.config = {
             }
         }
     ]
-
+keybindings: [
+        # Include other keybindings you want to keep here
+        # Explicitly override Alt+Enter to do nothing
+        {
+            name: "disable_alt_enter",
+            modifier: Alt,
+            keycode: Enter,
+            mode: [emacs vi_insert vi_normal],
+            event: null  # This disables the keybinding
+        }
+    ]
 }
 use ~/.cache/starship/init.nu
 source ~/.cache/.zoxide.nu

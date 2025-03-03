@@ -24,3 +24,8 @@ def e [xyz: string] {
 def e-pattern [pattern]  {
     ^fd -g $pattern -X nvim
 }
+
+def gl [] {
+    cd ~/misc/notes
+    fzf --bind 'enter:become(glow -p {})'
+}
