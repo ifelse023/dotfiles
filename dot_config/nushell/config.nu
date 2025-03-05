@@ -7,11 +7,7 @@ let fish_completer = {|spans|
     | from tsv --flexible --noheaders --no-infer
     | rename value description
 }
-let carapace_completer = {|spans: list<string>|
-    carapace $spans.0 nushell ...$spans
-    | from json
-    | if ($in | default [] | where value =~ '^-.*ERR$' | is-empty) { $in } else { null }
-}
+
 let external_completer = {|spans|
     let expanded_alias = scope aliases
     | where name == $spans.0
@@ -27,8 +23,7 @@ let external_completer = {|spans|
 
     match $spans.0 {
         __zoxide_z | __zoxide_zi => $zoxide_completer
-        chezmoi => $fish_completer
-        _ => $carapace_completer
+        _ => $fish_completer
     } | do $in $spans
 }
 $env.config = {
