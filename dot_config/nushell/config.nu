@@ -7,7 +7,6 @@ let fish_completer = {|spans|
     | from tsv --flexible --noheaders --no-infer
     | rename value description
 }
-
 let external_completer = {|spans|
     let expanded_alias = scope aliases
     | where name == $spans.0

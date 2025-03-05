@@ -1,7 +1,7 @@
 $env.PATH = ($env.PATH | uniq)
-
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/wasd/architect/scripts")
 $env.GOPATH = "/home/wasd/.go"
+$env.RIPGREP_CONFIG_PATH = "/home/wasd/.config/ripgrep/config"
 $env.LS_COLORS = "~/.config/nushell/theme/ls_colors"
 $env.MOAR = "--no-linenumbers"
 $env.PAGER = "/usr/bin/moar"
