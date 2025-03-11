@@ -1,6 +1,6 @@
 #=== General Settings ===
 font-size = 16
-theme = tokyonight_night
+theme = catppuccin-mocha.conf
 window-decoration = false
 window-padding-x = 6
 window-padding-y = 8

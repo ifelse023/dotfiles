@@ -8,6 +8,7 @@ end
 
 # ===== PATH CONFIGURATION =====
 fish_add_path /home/wasd/architect/scripts
+fish_add_path ~/.cargo/bin
 
 # ===== ENVIRONMENT VARIABLES =====
 set -gx GOPATH "/home/wasd/.go"
