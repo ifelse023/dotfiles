@@ -4,14 +4,17 @@ if status is-interactive
     set fish_greeting
     starship init fish | source
     zoxide init fish | source
+    direnv hook fish | source
+    source /home/wasd/misc/tokyonight/extras/fish/tokyonight_night.fish
 end
 
 # ===== PATH CONFIGURATION =====
 fish_add_path /home/wasd/architect/scripts
 fish_add_path ~/.cargo/bin
-
+# fish_add_path ~/.nix-profile/bin
 # ===== ENVIRONMENT VARIABLES =====
 set -gx GOPATH "/home/wasd/.go"
+# set -gx PICO_SDK_PATH "/home/wasd/.pico-sdk/sdk/2.1.1"
 
 # Tool configurations
 set -gx RIPGREP_CONFIG_PATH "/home/wasd/.config/ripgrep/config"
@@ -19,7 +22,7 @@ set -gx RIPGREP_CONFIG_PATH "/home/wasd/.config/ripgrep/config"
 # Pager settings
 set -gx MOAR --no-linenumbers
 set -gx PAGER /usr/bin/moar
-
+set -gx BAT_PAGER "moar --no-linenumbers"
 # FZF settings
 set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden"
 set -gx FZF_DEFAULT_OPTS "
@@ -40,7 +43,7 @@ alias se="sudoedit"
 # ===== FILE OPERATION ALIASES =====
 alias open-task="floorp --new-tab (open aufgabe.txt)"
 alias xx="fzf --bind 'enter:become(nvim {})'"
-alias cat="bat --theme='Dracula' --style=plain --no-pager"
+alias cat="bat"
 alias diff="diff --color=auto"
 
 alias update='sudo pacman -Syu && paru -Syu'

@@ -1,6 +1,6 @@
 #=== General Settings ===
 font-size = 16
-theme = catppuccin-mocha.conf
+theme = /home/wasd/misc/tokyonight/extras/ghostty/tokyonight_night
 window-decoration = false
 window-padding-x = 6
 window-padding-y = 8
