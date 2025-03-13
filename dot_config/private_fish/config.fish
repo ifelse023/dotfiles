@@ -5,7 +5,6 @@ if status is-interactive
     starship init fish | source
     zoxide init fish | source
     direnv hook fish | source
-    source /home/wasd/misc/tokyonight/extras/fish/tokyonight_night.fish
 end
 
 # ===== PATH CONFIGURATION =====
