@@ -40,7 +40,7 @@ alias vimdiff="nvim -d"
 alias se="sudoedit"
 
 # ===== FILE OPERATION ALIASES =====
-alias open-task="floorp --new-tab (open aufgabe.txt)"
+alias open-task="uwsm app -- firefox-beta --new-tab (open aufgabe.txt)"
 alias xx="fzf --bind 'enter:become(nvim {})'"
 alias cat="bat"
 alias diff="diff --color=auto"
