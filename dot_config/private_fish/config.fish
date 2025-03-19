@@ -34,16 +34,15 @@ set -gx FZF_DEFAULT_OPTS "
 "
 
 # ===== EDITOR ALIASES =====
-alias vim="uwsm app -- neovide"
-alias vi="uwsm app -- neovide"
-alias vimdiff="nvim -d"
+alias vim="uwsm app -- helix"
 alias se="sudoedit"
 
 # ===== FILE OPERATION ALIASES =====
 alias open-task="uwsm app -- firefox-beta --new-tab (open aufgabe.txt)"
-alias xx="fzf --bind 'enter:become(nvim {})'"
+alias xx="fzf --bind 'enter:become(helix {})'"
 alias cat="bat"
 alias diff="diff --color=auto"
+alias fcd 'cd $(fd -type d | fzf)'
 
 alias update='sudo pacman -Syu && paru -Syu'
 
