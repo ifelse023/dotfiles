@@ -1,7 +1,7 @@
 palette = "catppuccin_mocha"
 add_newline = false
 command_timeout = 1000
-format = """$directory$git_branch$git_status$package$c$lua$zig$python$rust
+format = """$directory$git_branch$git_status$package$c$lua$zig$python$rust$nix_shell
 [[󰋕](bold green) ❯ ](lavender)"""
 
 [os]
@@ -58,7 +58,10 @@ symbol = " "
 symbol = " "
 
 [nix_shell]
-symbol = " "
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[unknown shell](bold yellow)'
+format = 'via [ $state( \($name\))](bold blue) '
 
 [package]
 symbol = " "

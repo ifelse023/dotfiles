@@ -1,0 +1,21 @@
+theme = "cat"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+[keys.normal]
+s = "goto_word"

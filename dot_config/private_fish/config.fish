@@ -33,10 +33,6 @@ set -gx FZF_DEFAULT_OPTS "
 --color=bg+:#283457,bg:#16161e,border:#27a1b9,fg:#c0caf5,gutter:#16161e,header:#ff9e64,hl+:#2ac3de,hl:#2ac3de,info:#545c7e,marker:#ff007c,pointer:#ff007c,prompt:#2ac3de,query:#c0caf5:regular,scrollbar:#27a1b9,separator:#ff9e64,spinner:#ff007c
 "
 
-# ===== EDITOR ALIASES =====
-alias vim="uwsm app -- helix"
-alias se="sudoedit"
-
 # ===== FILE OPERATION ALIASES =====
 alias open-task="uwsm app -- firefox-beta --new-tab (open aufgabe.txt)"
 alias xx="fzf --bind 'enter:become(helix {})'"
@@ -59,3 +55,32 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+
+function vim
+    uwsm app -- helix $argv
+end
+
+function h
+    uwsm app -- helix $argv
+end
+
+function hx
+    uwsm app -- helix $argv
+end
+
+function hc
+    chezmoi edit --apply
+end
+
+function se
+    sudoedit $argv
+end
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
