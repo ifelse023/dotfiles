@@ -4,8 +4,11 @@
 [color]
   ui = auto
 [core]
-	editor = nvim
+	editor = hx
+	pager = delta
 	preloadIndex = true
+[interactive]
+    diffFilter = delta --color-only
 [alias]
 	co = checkout
 	br = branch
@@ -13,10 +16,12 @@
 	st = status
 [init]
 	defaultBranch = main
-[merge]
-	tool = vimdiff
-	conflictStyle = diff3
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true
+[merge]
+    conflictstyle = zdiff3
