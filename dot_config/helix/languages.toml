@@ -24,12 +24,13 @@ only = [
   "typescript",
   "x86asm",
   "yaml",
-  "zig"
+  "zig",
 ]
 
 [[language]]
 name = "c"
 auto-format = true
+roots = ["flake.nix"]
 formatter = { command = "clang-format" }
 
 [[language]]

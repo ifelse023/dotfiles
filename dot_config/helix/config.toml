@@ -1,4 +1,4 @@
-theme = "cat"
+theme = "tokyonight"
 
 [editor]
 line-number = "relative"
@@ -17,5 +17,5 @@ select = "underline"
 render = true
 character = "▏"
 
-[keys.normal]
-s = "goto_word"
+# [keys.normal]
+# s = "goto_word"
