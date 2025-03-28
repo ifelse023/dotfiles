@@ -3,7 +3,6 @@ if status is-interactive
     starship init fish | source
     zoxide init fish | source
     direnv hook fish | source
-    zellij_start
 end
 
 fish_add_path /home/wasd/architect/scripts
@@ -14,8 +13,8 @@ set -gx CC clang
 set -gx CXX "clang++"
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
-set -gx EDITOR helix
-set -gx GIT_EDITOR helix
+set -gx EDITOR nvim
+set -gx GIT_EDITOR nvim
 
 set -gx PAGER "bat --paging=always --style=plain"
 set -gx BAT_PAGER ""
@@ -65,7 +64,7 @@ alias l.="eza -a | rg '^\.'"
 function xx
     set file (fd --type f --hidden --exclude .git | fzf --preview 'bat --color=always --style=numbers {}')
     if test -n "$file"
-        helix "$file"
+        uwsm app -- neovide "$file"
     end
 end
 
@@ -77,15 +76,11 @@ function fcd
 end
 
 function vim
-    uwsm app -- helix $argv
-end
-
-function hx
-    uwsm app -- helix $argv
+    uwsm app -- neovide $argv
 end
 
 function x
-    uwsm app -- helix $argv
+    uwsm app -- nvim $argv
 end
 
 function se

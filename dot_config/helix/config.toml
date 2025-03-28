@@ -17,5 +17,12 @@ select = "underline"
 render = true
 character = "▏"
 
+[keys.normal.space]
+space = "file_picker_in_current_directory"
+
+
+[keys.normal]
+tab = "rotate_view"
+
 # [keys.normal]
 # s = "goto_word"

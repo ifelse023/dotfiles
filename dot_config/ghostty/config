@@ -1,6 +1,6 @@
 #=== General Settings ===
 font-size = 16
-theme = tokyonight
+theme = catppuccin-mocha
 confirm-close-surface = true
 window-decoration = false
 gtk-single-instance = true
