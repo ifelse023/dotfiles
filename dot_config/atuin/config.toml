@@ -1,0 +1,8 @@
+inline_height = 16
+update_check = false
+
+[theme]
+name = "catppuccin-mocha-mauve"
+
+[ui]
+invert = true
