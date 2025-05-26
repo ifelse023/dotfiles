@@ -3,7 +3,6 @@ font-size = 16
 window-padding-x = 2
 window-padding-y = 2
 shell-integration = fish
-theme = tokyonight_night
 confirm-close-surface = false
 window-decoration = false
 gtk-single-instance = true
@@ -31,25 +30,26 @@ keybind = super+shift+r=reload_config
 keybind = super+shift+d=close_surface
 
 
-# palette = 0=#16181a
-# palette = 1=#ff6e5e
-# palette = 2=#5eff6c
-# palette = 3=#f1ff5e
-# palette = 4=#5ea1ff
-# palette = 5=#bd5eff
-# palette = 6=#5ef1ff
-# palette = 7=#ffffff
-# palette = 8=#3c4048
-# palette = 9=#ff6e5e
-# palette = 10=#5eff6c
-# palette = 11=#f1ff5e
-# palette = 12=#5ea1ff
-# palette = 13=#bd5eff
-# palette = 14=#5ef1ff
-# palette = 15=#ffffff
-#
-# background = #16181a
-# foreground = #ffffff
-# cursor-color = #ffffff
-# selection-background = #3c4048
-# selection-foreground = #ffffff
+
+palette = 0=#16181a
+palette = 1=#ff6e5e
+palette = 2=#5eff6c
+palette = 3=#f1ff5e
+palette = 4=#5ea1ff
+palette = 5=#bd5eff
+palette = 6=#5ef1ff
+palette = 7=#ffffff
+palette = 8=#3c4048
+palette = 9=#ff6e5e
+palette = 10=#5eff6c
+palette = 11=#f1ff5e
+palette = 12=#5ea1ff
+palette = 13=#bd5eff
+palette = 14=#5ef1ff
+palette = 15=#ffffff
+
+background = #16181a
+foreground = #ffffff
+cursor-color = #ffffff
+selection-background = #3c4048
+selection-foreground = #ffffff
