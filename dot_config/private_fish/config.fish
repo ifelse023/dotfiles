@@ -10,7 +10,6 @@ fish_add_path ~/.cargo/bin
 
 set -gx GOPATH "$HOME/.go"
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
-set -x _JAVA_OPTIONS "-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 
 set -gx CC clang
