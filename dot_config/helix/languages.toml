@@ -40,6 +40,6 @@ auto-format = true
 [language-server.clangd]
 command = "clangd"
 config = { fallbackFlags = ["-std=c23"] }
-
+args = ["--enable-config"]
 [language-server.nil]
 config.nil.formatting.command = ["nixfmt-rfc-style"]

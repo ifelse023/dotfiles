@@ -3,6 +3,8 @@ if status is-interactive
     starship init fish | source
     zoxide init fish | source
     direnv hook fish | source
+
+    zellij_start
 end
 
 fish_add_path /home/wasd/architect/scripts
@@ -12,13 +14,13 @@ set -gx GOPATH "$HOME/.go"
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 
+set -gx PICO_SDK_PATH /opt/pico-sdk
 set -gx CC clang
 set -gx CXX "clang++"
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
 set -gx EDITOR nvim
 set -gx GIT_EDITOR nvim
-
 set -gx PAGER "bat --paging=always --style=plain"
 set -gx BAT_PAGER ""
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -67,7 +69,7 @@ alias l.="eza -a | rg '^\.'"
 function xx
     set file (fd --type f --hidden --exclude .git | fzf --preview 'bat --color=always --style=numbers {}')
     if test -n "$file"
-        uwsm app -- neovide "$file"
+        uwsm app -- nvim "$file"
     end
 end
 
@@ -79,7 +81,7 @@ function fcd
 end
 
 function vim
-    uwsm app -- neovide $argv
+    uwsm app -- nvim $argv
 end
 
 function x
@@ -133,6 +135,3 @@ function src
 
     fd --type f --extension $ext --hidden --exclude .git --exclude target --exclude build -0 . $path | sad -0 $pattern $replacement
 end
-
-bind \co xx
-bind \cf fcd
