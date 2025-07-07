@@ -23,6 +23,7 @@ space = "file_picker_in_current_directory"
 
 [keys.normal]
 tab = "rotate_view"
-
-# [keys.normal]
-# s = "goto_word"
+"A-tab" = "goto_next_buffer"
+q = "goto_word"
+"A-q" = "wclose"
+"C-q" = "wonly"

@@ -1,8 +1,10 @@
 keybinds clear-defaults=true {
     normal {
 
-        bind "Alt d" { CloseFocus; }
+        bind "Alt k" { CloseFocus; }
+        bind "Alt Shift k" { Detach; }
         bind "Alt Space" { GoToNextTab; }
+        bind "Alt t" {  NewTab; SwitchToMode "normal"; } 
         bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
         bind "Alt 3" { GoToTab 3; SwitchToMode "Normal"; }
@@ -164,7 +166,6 @@ keybinds clear-defaults=true {
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
-        bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "move" {
         bind "Ctrl h" { SwitchToMode "move"; }

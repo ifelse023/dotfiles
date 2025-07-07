@@ -2,6 +2,7 @@
 only = [
   "asm",
   "bash",
+  "fish",
   "c",
   "cpp",
   "dockerfile",
