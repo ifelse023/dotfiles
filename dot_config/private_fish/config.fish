@@ -4,8 +4,10 @@ if status is-interactive
     zoxide init fish | source
     direnv hook fish | source
     zellij_start
-end
 
+end
+set fish_cursor_insert line
+set fish_cursor_external line
 fish_add_path /home/wasd/architect/scripts
 
 set -gx GOPATH "$HOME/.go"
@@ -17,8 +19,8 @@ set -gx CC clang
 set -gx CXX "clang++"
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
-set -gx EDITOR hx
-set -gx GIT_EDITOR hx
+set -gx EDITOR nvim
+set -gx GIT_EDITOR nvim
 set -gx PAGER "bat --paging=always --style=plain"
 set -gx BAT_PAGER ""
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -57,7 +59,7 @@ alias l.="eza -a | rg '^\.'"
 function xx
     set file (fd --type f --hidden --exclude .git | fzf --preview 'bat --color=always --style=numbers {}')
     if test -n "$file"
-        uwsm app -- hx "$file"
+        uwsm app -- nvim "$file"
     end
 end
 
@@ -69,11 +71,11 @@ function fcd
 end
 
 function vim
-    uwsm app -- hx $argv
+    uwsm app -- nvim $argv
 end
 
 function x
-    uwsm app -- hx $argv
+    uwsm app -- nvim $argv
 end
 
 function se

@@ -3,7 +3,10 @@ keybinds clear-defaults=true {
 
         bind "Alt k" { CloseFocus; }
         bind "Alt Shift k" { Detach; }
-        bind "Alt Space" { GoToNextTab; }
+        bind "Alt Space" { FocusNextPane; }
+        bind "Alt /" { FocusNextPane; }
+        bind "Alt Shift Space" { FocusPreviousPane; }
+        bind "Alt Shift Tab" { GoToNextTab; }
         bind "Alt t" {  NewTab; SwitchToMode "normal"; } 
         bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
@@ -293,7 +296,7 @@ web_client {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "blade-runner"
+theme "catppuccin-mocha"
 
 // Choose the base input mode of zellij.
 // Default: normal
