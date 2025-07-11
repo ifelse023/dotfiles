@@ -1,0 +1,8 @@
+dashboard -style syntax_highlighting 'github-dark'
+
+define pico-asm
+  dashboard -layout registers assembly memory variables source
+  dashboard assembly -style height 15
+end
+
+pico-asm

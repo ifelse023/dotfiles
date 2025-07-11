@@ -1,56 +1,54 @@
 palette = "catppuccin_mocha"
-
 add_newline = false
 command_timeout = 1000
-format = """$directory$git_branch$git_status$package$c$lua$zig$python$rust$nix_shell
-[[󰋕](bold green) ❯ ](lavender)"""
+format = """$os$directory$git_branch$git_status$package$c$lua$zig$python$rust$nix_shell
+$character"""
+
 
 [os]
-format = '[on](blue) [󰣇](bold blue) '
+format = '[󰣇](bold blue) '
 disabled = false
 
 [os.symbols]
 Arch = '󰣇'
 
-[username]
-style_user = 'text'
-style_root = 'black bold'
-format = '[$user]($style) '
-disabled = false
-show_always = true
+[character]
+success_symbol = "[󰋕 ❯](lavender)"
+error_symbol = "[󰋕 ❯](red)"
+format = "$symbol "
 
-# Shows current directory
+
 [directory]
-truncation_length = 4
+truncation_length = 5
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
-read_only_style = '197'
 read_only = '  '
-format = '[@](bold purple) [$path]($style)[$read_only]($read_only_style) '
+format = '[@]($bold mauve) [$path]($style)[$read_only]($read_only_style) '
+style = "bold mauve"
+read_only_style = "red"
 
-# Shows current git branch
 [git_branch]
-symbol = ' '
-format = '[$symbol$branch]($style)'
-# truncation_length = 4
-truncation_symbol = '…/'
+symbol = ''
+format = '[on](text) [$symbol $branch]($style) '
 style = 'bold green'
 
-# Shows current git status
 [git_status]
-format = '[$all_status$ahead_behind]($style) '
+format = '([$all_status$ahead_behind]($style)) '
 style = 'bold green'
-conflicted = '🏳'
-up_to_date = ''
-untracked = ' '
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-stashed = ' '
-modified = ' '
-staged = '[++\($count\)](green)'
-renamed = '襁 '
-deleted = ' '
+conflicted = '[🏳](red)'
+untracked = '[?](peach)'
+ahead = '[⇡${count}](green)'
+behind = '[⇣${count}](green)'
+diverged = '[⇕⇡${ahead_count}⇣${behind_count}](red)'
+stashed = '[](lavender)'
+modified = '[](yellow)'
+staged = '[+](green)'
+renamed = '[»](peach)'
+deleted = '[-](red)'
+
+[c]
+commands = [["clang", "--version"]]
+style = "lavender bold"
 
 [hg_branch]
 symbol = " "

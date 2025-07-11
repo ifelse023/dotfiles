@@ -5,9 +5,10 @@ keybinds clear-defaults=true {
         bind "Alt Shift k" { Detach; }
         bind "Alt Space" { FocusNextPane; }
         bind "Alt /" { FocusNextPane; }
+        bind "Ctrl /"  { ToggleFloatingPanes; }
         bind "Alt Shift Space" { FocusPreviousPane; }
         bind "Alt Shift Tab" { GoToNextTab; }
-        bind "Alt t" {  NewTab; SwitchToMode "normal"; } 
+        bind "Alt Enter" {  NewTab; SwitchToMode "normal"; } 
         bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
         bind "Alt 3" { GoToTab 3; SwitchToMode "Normal"; }
@@ -53,6 +54,8 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; SwitchToMode "normal"; }
         bind "8" { GoToTab 8; SwitchToMode "normal"; }
         bind "9" { GoToTab 9; SwitchToMode "normal"; }
+        bind "Alt o" { MoveTab "right"; }
+        bind "Alt i" { MoveTab "left"; }
         bind "[" { BreakPaneLeft; SwitchToMode "normal"; }
         bind "]" { BreakPaneRight; SwitchToMode "normal"; }
         bind "b" { BreakPane; SwitchToMode "normal"; }
@@ -149,6 +152,16 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
+    bind "Ctrl y" {
+        LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
+            floating true
+            ignore_case true
+            quick_jump true
+        }
+    }
+        bind "Ctrl [" { BreakPaneLeft; SwitchToMode "normal"; }
+        bind "Ctrl ]" { BreakPaneRight; SwitchToMode "normal"; }
+        bind "Ctrl b" { BreakPane; SwitchToMode "normal"; }
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
@@ -161,12 +174,10 @@ keybinds clear-defaults=true {
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Alt h" { MoveFocusOrTab "left"; }
-        bind "Alt i" { MoveTab "left"; }
         bind "Alt j" { MoveFocus "down"; }
         bind "Alt k" { MoveFocus "up"; }
         bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
-        bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
@@ -176,9 +187,9 @@ keybinds clear-defaults=true {
     shared_except "locked" "session" {
         bind "Ctrl o" { SwitchToMode "session"; }
     }
-    shared_except "locked" "scroll" "search" "tmux" {
-        bind "Ctrl b" { SwitchToMode "tmux"; }
-    }
+    // shared_except "locked" "scroll" "search" "tmux" {
+    //     bind "Ctrl b" { SwitchToMode "tmux"; }
+    // }
     shared_except "locked" "scroll" "search" {
         bind "Ctrl s" { SwitchToMode "scroll"; }
     }
@@ -296,7 +307,22 @@ web_client {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "catppuccin-mocha"
+themes {
+    cyberdream {
+        bg "#16181a"
+        fg "#ffffff"
+        black "#7b8496"
+        red "#ff6e5e"
+        green "#5eff6c"
+        yellow "#f1ff5e"
+        blue "#5ea1ff"
+        magenta "#ff5ef1"
+        cyan "#5ef1ff"
+        white "#ffffff"
+        orange "#ffbd5e"
+    }
+}
+theme "ao"
 
 // Choose the base input mode of zellij.
 // Default: normal

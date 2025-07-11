@@ -38,8 +38,9 @@ set -gx FZF_DEFAULT_OPTS "
 "
 
 abbr -a c chezmoi
+abbr -a n nvim
 abbr -a j just
-abbr -a py = python
+abbr -a py python
 
 abbr -a .. 'cd ..'
 abbr -a ... 'cd ../..'
@@ -49,6 +50,7 @@ abbr -a ..... 'cd ../../../..'
 alias cat="bat --paging=never"
 alias diff="diff --color=auto"
 alias update='sudo pacman -Syu && paru -Syu'
+alias x='nvim'
 
 alias ls='eza -h --git --icons --color=auto --group-directories-first -s extension'
 alias la='eza -a --git --icons --color=auto --group-directories-first'
@@ -70,25 +72,8 @@ function fcd
     end
 end
 
-function vim
-    uwsm app -- nvim $argv
-end
-
-function x
-    uwsm app -- nvim $argv
-end
-
 function se
     sudoedit $argv
-end
-
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
 end
 
 bind \ck zellij_start
