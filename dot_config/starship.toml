@@ -13,7 +13,7 @@ disabled = false
 Arch = '󰣇'
 
 [character]
-success_symbol = "[󰋕 ❯](lavender)"
+success_symbol = "[󰋕](green) [❯](lavender)"
 error_symbol = "[󰋕 ❯](red)"
 format = "$symbol "
 

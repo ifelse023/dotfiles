@@ -1,12 +1,12 @@
 keybinds clear-defaults=true {
     normal {
 
-        bind "Alt k" { CloseFocus; }
+        bind "Ctrl k" { CloseFocus; }
         bind "Alt Shift k" { Detach; }
-        bind "Alt Space" { FocusNextPane; }
+        bind "Ctrl Space" { FocusNextPane; }
         bind "Alt /" { FocusNextPane; }
         bind "Ctrl /"  { ToggleFloatingPanes; }
-        bind "Alt Shift Space" { FocusPreviousPane; }
+        bind "Ctrl Shift Space" { FocusPreviousPane; }
         bind "Alt Shift Tab" { GoToNextTab; }
         bind "Alt Enter" {  NewTab; SwitchToMode "normal"; } 
         bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
@@ -307,22 +307,8 @@ web_client {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-themes {
-    cyberdream {
-        bg "#16181a"
-        fg "#ffffff"
-        black "#7b8496"
-        red "#ff6e5e"
-        green "#5eff6c"
-        yellow "#f1ff5e"
-        blue "#5ea1ff"
-        magenta "#ff5ef1"
-        cyan "#5ef1ff"
-        white "#ffffff"
-        orange "#ffbd5e"
-    }
-}
-theme "ao"
+
+theme "catppuccin-mocha"
 
 // Choose the base input mode of zellij.
 // Default: normal
