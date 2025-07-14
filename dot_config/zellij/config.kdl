@@ -8,7 +8,8 @@ keybinds clear-defaults=true {
         bind "Ctrl /"  { ToggleFloatingPanes; }
         bind "Ctrl Shift Space" { FocusPreviousPane; }
         bind "Alt Shift Tab" { GoToNextTab; }
-        bind "Alt Enter" {  NewTab; SwitchToMode "normal"; } 
+        bind "Ctrl Enter" {  NewTab; SwitchToMode "normal"; } 
+        bind "Alt Enter" {  NewPane;} 
         bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
         bind "Alt 3" { GoToTab 3; SwitchToMode "Normal"; }
