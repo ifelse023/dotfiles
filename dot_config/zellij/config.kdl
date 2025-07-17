@@ -309,7 +309,7 @@ web_client {
 // Default: default
 // 
 
-theme "catppuccin-mocha"
+theme "ao"
 
 // Choose the base input mode of zellij.
 // Default: normal
@@ -328,7 +328,7 @@ default_shell "fish"
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-// default_layout "compact"
+default_layout "compact"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)

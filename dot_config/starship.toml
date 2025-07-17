@@ -1,9 +1,8 @@
-palette = "catppuccin_mocha"
+palette = "cyberdream_dark"
 add_newline = false
 command_timeout = 1000
 format = """$os$directory$git_branch$git_status$package$c$lua$zig$python$rust$nix_shell
 $character"""
-
 
 [os]
 format = '[󰣇](bold blue) '
@@ -13,42 +12,41 @@ disabled = false
 Arch = '󰣇'
 
 [character]
-success_symbol = "[󰋕](green) [❯](lavender)"
+success_symbol = "[󰋕](green) [❯](purple)"
 error_symbol = "[󰋕 ❯](red)"
 format = "$symbol "
-
 
 [directory]
 truncation_length = 5
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
 read_only = '  '
-format = '[@]($bold mauve) [$path]($style)[$read_only]($read_only_style) '
-style = "bold mauve"
+format = '[@]($bold purple) [$path]($style)[$read_only]($read_only_style) '
+style = "bold purple"
 read_only_style = "red"
 
 [git_branch]
 symbol = ''
-format = '[on](text) [$symbol $branch]($style) '
+format = '[on](fg) [$symbol $branch]($style) '
 style = 'bold green'
 
 [git_status]
 format = '([$all_status$ahead_behind]($style)) '
 style = 'bold green'
 conflicted = '[🏳](red)'
-untracked = '[?](peach)'
+untracked = '[?](orange)'
 ahead = '[⇡${count}](green)'
 behind = '[⇣${count}](green)'
 diverged = '[⇕⇡${ahead_count}⇣${behind_count}](red)'
-stashed = '[](lavender)'
+stashed = '[](pink)'
 modified = '[](yellow)'
 staged = '[+](green)'
-renamed = '[»](peach)'
+renamed = '[»](orange)'
 deleted = '[-](red)'
 
 [c]
 commands = [["clang", "--version"]]
-style = "lavender bold"
+style = "bold cyan"
 
 [hg_branch]
 symbol = " "
@@ -67,7 +65,6 @@ symbol = " "
 
 [python]
 symbol = " "
-#pyenv_version_name = true
 format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
 style = "bold yellow"
 pyenv_prefix = "venv "
@@ -78,30 +75,18 @@ version_format = "v${raw}"
 [rust]
 symbol = " "
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[palettes.cyberdream_dark]
+bg            = "#16181a"
+bg_alt        = "#1e2124"
+bg_highlight  = "#3c4048"
+fg            = "#ffffff"
+grey          = "#7b8496"
+blue          = "#5ea1ff"
+green         = "#5eff6c"
+cyan          = "#5ef1ff"
+red           = "#ff6e5e"
+yellow        = "#f1ff5e"
+magenta       = "#ff5ef1"
+pink          = "#ff5ea0"
+orange        = "#ffbd5e"
+purple        = "#bd5eff"
