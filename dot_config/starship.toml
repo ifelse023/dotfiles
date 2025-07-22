@@ -45,8 +45,11 @@ renamed = '[»](orange)'
 deleted = '[-](red)'
 
 [c]
-commands = [["clang", "--version"]]
 style = "bold cyan"
+detect_files = [
+    "CMakeLists.txt",
+    "compile_commands.json"
+]
 
 [hg_branch]
 symbol = " "

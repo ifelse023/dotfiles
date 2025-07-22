@@ -1,0 +1,3 @@
+set selection-clipboard clipboard
+set font "JetBrainsMono Nerd Font Mono 12"
+include mocha

@@ -32,7 +32,6 @@ end
 
 function z_kill_all
     zellij kill-all-sessions -y
-    sleep 1
     zellij delete-all-sessions -y
 end
 

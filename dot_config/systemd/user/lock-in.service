@@ -1,0 +1,7 @@
+[Unit]
+Description=Send a notification to lock the screen
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/notify-send -u critical -i dialog-password "Lock in!!!"
+Environment=DISPLAY=:0

@@ -17,6 +17,7 @@ set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 set -gx PICO_SDK_PATH ~/.local/share/pico-sdk
 set -gx CC clang
 set -gx CXX "clang++"
+set -gx PATH $HOME/opt/riscv/gcc14-rp2350-no-zcmp/bin $PATH
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
 set -gx EDITOR nvim
@@ -54,7 +55,7 @@ alias cat="bat --paging=never"
 alias diff="diff --color=auto"
 alias update='sudo pacman -Syu && paru -Syu'
 alias x='nvim'
-
+alias relf='llvm-readelf --all'
 alias ls='eza -h --git --icons --color=auto --group-directories-first -s extension'
 alias la='eza -a --git --icons --color=auto --group-directories-first'
 alias ll='eza -l --git --icons --color=auto --group-directories-first'

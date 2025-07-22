@@ -1,0 +1,13 @@
+[Unit]
+Description=Run lock-in.service every hour
+
+[Timer]
+# OnCalendar=hourly is a convenient shorthand.
+# You could also use something more specific like *-*-* *:00:00
+OnCalendar=hourly
+# This makes the timer more robust by allowing it to trigger
+# immediately after boot if a scheduled time was missed.
+Persistent=true
+
+[Install]
+WantedBy=timers.target
