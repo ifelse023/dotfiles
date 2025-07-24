@@ -3,6 +3,7 @@ if status is-interactive
     starship init fish | source
     zoxide init fish | source
     direnv hook fish | source
+    source ~/.config/fish/atuin.fish
     zellij_start
 
 end
@@ -14,10 +15,8 @@ set -gx GOPATH "$HOME/.go"
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 
-set -gx PICO_SDK_PATH ~/.local/share/pico-sdk
 set -gx CC clang
 set -gx CXX "clang++"
-set -gx PATH $HOME/opt/riscv/gcc14-rp2350-no-zcmp/bin $PATH
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
 set -gx EDITOR nvim
