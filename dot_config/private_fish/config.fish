@@ -4,8 +4,6 @@ if status is-interactive
     zoxide init fish | source
     direnv hook fish | source
     source ~/.config/fish/atuin.fish
-    zellij_start
-
 end
 set fish_cursor_insert line
 set fish_cursor_external line
@@ -14,6 +12,7 @@ fish_add_path /home/wasd/architect/scripts
 set -gx GOPATH "$HOME/.go"
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+set -gx PICO_SDK_PATH "$HOME/dev/lib/sdk"
 
 set -gx CC clang
 set -gx CXX "clang++"
@@ -53,13 +52,17 @@ abbr -a ..... 'cd ../../../..'
 alias cat="bat --paging=never"
 alias diff="diff --color=auto"
 alias update='sudo pacman -Syu && paru -Syu'
-alias x='nvim'
-alias relf='llvm-readelf --all'
+alias x='neovide'
+alias vim='neovide'
 alias ls='eza -h --git --icons --color=auto --group-directories-first -s extension'
 alias la='eza -a --git --icons --color=auto --group-directories-first'
 alias ll='eza -l --git --icons --color=auto --group-directories-first'
 alias lt='eza -T --git --icons --color=auto --level=2 --group-directories-first'
 alias l.="eza -a | rg '^\.'"
+
+alias readelf='llvm-readelf'
+alias objdump='llvm-objdump'
+alias nm='llvm-nm'
 
 function xx
     set file (fd --type f --hidden --exclude .git | fzf --preview 'bat --color=always --style=numbers {}')
@@ -78,5 +81,3 @@ end
 function se
     sudoedit $argv
 end
-
-bind \ck zellij_start
