@@ -1,3 +1,38 @@
+function x
+    uwsm app neovide
+end
+
+function xx
+    set file (fd --type f --hidden --exclude .git | fzf --preview 'bat --color=always --style=numbers {}')
+    if test -n "$file"
+        uwsm app -- neovide "$file"
+    end
+end
+
+function xd
+    set dir (fd --type d --exclude .git | fzf --height 20 --preview 'eza --tree --level=1 --color=always {}')
+    if test -n "$dir"
+        cd "$dir"
+    end
+end
+
+function xc
+    set file (fd --type f --hidden --exclude .git . ~/.local/share/chezmoi | fzf --preview 'bat --color=always --style=numbers {}')
+    if test -n "$file"
+        neovide "$file"
+    end
+end
+
+function se
+    sudoedit $argv
+end
+
+function exit_if_empty
+    if test -z (commandline)
+        exit
+    end
+end
+
 function clean-unzip --argument zipfile
     if not test (echo $zipfile | string sub --start=-4) = .zip
         echo (status function): argument must be a zipfile
@@ -13,7 +48,18 @@ function clean-unzip --argument zipfile
         unzip $zipfile -d $target
     end
 end
+function is-clean-zip --argument zipfile
+    if string-empty $zipfile
+        echo 'is-clean-zip: missing filename' >&2
+        return 1
+    end
 
+    set summary (zip -sf $zipfile | string split0)
+    set first_file (echo $summary | row 2 | string trim)
+    set first_file_last_char (echo $first_file | string sub --start=-1)
+    set n_files (echo $summary | awk NF | tail -1 | coln 2)
+    test $n_files = 1 && test $first_file_last_char = /
+end
 function mkdir-cd --argument dir
     mkdir -p -- $dir
     and cd -- $dir

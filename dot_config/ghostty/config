@@ -2,38 +2,44 @@ font-size = 16
 window-padding-x = 2
 window-padding-y = 5
 shell-integration = fish
-confirm-close-surface = false
+confirm-close-surface = true
 window-decoration = false
-gtk-single-instance = true
+gtk-single-instance = false
 auto-update = off
-
-
+focus-follows-mouse
 keybind = alt+enter=new_split:right
-keybind = alt+k=close_window
-keybind = alt+;=goto_split:next
-keybind = alt+'=goto_split:previous
+keybind = alt+]=goto_split:next
+keybind = alt+[=goto_split:previous
 keybind = ctrl+enter=new_tab
-keybind = ctrl+k=close_tab
+keybind = ctrl+/=toggle_quick_terminal
+keybind = ctrl+t=toggle_tab_overview
 
-palette = 0=#45475a
-palette = 1=#f38ba8
-palette = 2=#a6e3a1
-palette = 3=#f9e2af
-palette = 4=#89b4fa
-palette = 5=#f5c2e7
-palette = 6=#94e2d5
-palette = 7=#a6adc8
-palette = 8=#585b70
-palette = 9=#f38ba8
-palette = 10=#a6e3a1
-palette = 11=#f9e2af
-palette = 12=#89b4fa
-palette = 13=#f5c2e7
-palette = 14=#94e2d5
-palette = 15=#bac2de
-background = 1e1e2e
-foreground = cdd6f4
-cursor-color = f5e0dc
-cursor-text = 1e1e2e
-selection-background = 353749
-selection-foreground = cdd6f4
+unfocused-split-opacity = 0.60
+unfocused-split-fill = "#11111b"
+
+#custom-shader = shaders/cursor_smear.glsl
+#quick-terminal-animation-duration = 0.08
+
+# cyberdream theme for ghostty
+palette = 0=#16181a
+palette = 1=#ff6e5e
+palette = 2=#5eff6c
+palette = 3=#f1ff5e
+palette = 4=#5ea1ff
+palette = 5=#bd5eff
+palette = 6=#5ef1ff
+palette = 7=#ffffff
+palette = 8=#3c4048
+palette = 9=#ff6e5e
+palette = 10=#5eff6c
+palette = 11=#f1ff5e
+palette = 12=#5ea1ff
+palette = 13=#bd5eff
+palette = 14=#5ef1ff
+palette = 15=#ffffff
+
+background = #16181a
+foreground = #ffffff
+cursor-color = #ffffff
+selection-background = #3c4048
+selection-foreground = #ffffff

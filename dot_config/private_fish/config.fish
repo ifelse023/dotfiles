@@ -1,46 +1,13 @@
 if status is-interactive
     set -U fish_greeting ""
     starship init fish | source
-    zoxide init fish | source
-    direnv hook fish | source
+    zoxide init fish --cmd cd | source
     source ~/.config/fish/atuin.fish
 end
-set fish_cursor_insert line
-set fish_cursor_external line
 fish_add_path /home/wasd/architect/scripts
 
-set -gx GOPATH "$HOME/.go"
-set -gx CARGO_HOME $XDG_DATA_HOME/cargo
-set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
-set -gx PICO_SDK_PATH "$HOME/dev/lib/sdk"
-
-set -gx CC clang
-set -gx CXX "clang++"
-
-set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
-set -gx EDITOR nvim
-set -gx GIT_EDITOR nvim
-set -gx PAGER "bat --paging=always --style=plain"
-set -gx BAT_PAGER ""
-set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -gx GIT_PAGER "delta -s"
-
-set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden --exclude .git"
-set -gx FZF_DEFAULT_OPTS "
---highlight-line 
---info=inline-right 
---ansi 
---layout=reverse 
---border=none
---preview 'bat --color=always --style=numbers --line-range=:500 {}'
---color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
---color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
---color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
---color=selected-bg:#45475A \
---color=border:#313244,label:#CDD6F4"
-
 abbr -a c chezmoi
-abbr -a n nvim
+abbr -a n vim
 abbr -a j just
 abbr -a py python
 
@@ -52,7 +19,6 @@ abbr -a ..... 'cd ../../../..'
 alias cat="bat --paging=never"
 alias diff="diff --color=auto"
 alias update='sudo pacman -Syu && paru -Syu'
-alias x='neovide'
 alias vim='neovide'
 alias ls='eza -h --git --icons --color=auto --group-directories-first -s extension'
 alias la='eza -a --git --icons --color=auto --group-directories-first'
@@ -64,20 +30,40 @@ alias readelf='llvm-readelf'
 alias objdump='llvm-objdump'
 alias nm='llvm-nm'
 
+function x
+    uwsm app neovide
+end
+
 function xx
     set file (fd --type f --hidden --exclude .git | fzf --preview 'bat --color=always --style=numbers {}')
     if test -n "$file"
-        uwsm app -- nvim "$file"
+        uwsm app -- neovide "$file"
     end
 end
 
-function fcd
-    set dir (fd --type d --hidden --exclude .git | fzf --preview 'eza --tree --level=1 --color=always {}')
+function xd
+    set dir (fd --type d --exclude .git | fzf --height 20 --preview 'eza --tree --level=1 --color=always {}')
     if test -n "$dir"
         cd "$dir"
+    end
+end
+
+function xc
+    set file (fd --type f --hidden --exclude .git . ~/.local/share/chezmoi | fzf --preview 'bat --color=always --style=numbers {}')
+    if test -n "$file"
+        neovide "$file"
     end
 end
 
 function se
     sudoedit $argv
 end
+
+function exit_if_empty
+    if test -z (commandline)
+        exit
+    end
+end
+
+source ~/.config/fish/env.fish
+source ~/.local/share/cargo/env.fish
