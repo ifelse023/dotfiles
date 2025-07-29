@@ -1,0 +1,33 @@
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
+
+export GOPATH="$XDG_DATA_HOME/go"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+export PICO_SDK_PATH="$HOME/dev/lib/sdk"
+
+export CC=clang
+export CXX=clang++
+export EDITOR=helix
+export PAGER="bat --paging=always --style=plain"
+
+export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude .git"
+export FZF_DEFAULT_OPTS="
+    --color=fg:#494d64,bg:#1e1e2e,hl:#e06c75
+    --color=fg+:#cdd6f4,bg+:#585b70,hl+:#e06c75
+    --color=border:#b4befe,header:#a6e3a1,gutter:#1e1e2e
+    --color=spinner:#f9e2af,info:#89dceb
+    --color=pointer:#cba6f7,marker:#eba0ac,prompt:#494d64"
+
+export XDG_SESSION_TYPE=wayland
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
+export HYPRCURSOR_SIZE=24
+export HYPRCURSOR_THEME=rose-pine-hyprcursor

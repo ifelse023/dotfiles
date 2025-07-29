@@ -1,102 +1,101 @@
-# A Starship theme using the "dream" palette.
+"$schema" = 'https://starship.rs/config-schema.json'
 
-palette = "dream"
+format = """
+$directory\
+$git_branch\
+$git_status\
+$c\
+$haskell\
+$rust\
+$python\n \
+$character \
+"""
 
-add_newline = false
-command_timeout = 1000
+palette = "rose-pine"
 
-# The order of modules here defines the order they appear in the prompt.
-# A newline character (\n) is used before the `character` module to create a two-line prompt.
-format = """$os$directory$git_branch$git_status$package$c$lua$zig$python$rust$nix_shell
-$character"""
+[palettes.rose-pine]
+overlay = '#26233a'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
 
-# Defines the "dream" color palette.
-[palettes.dream]
-bg = "#16181a"
-bg_alt = "#1e2124"
-bg_highlight = "#3c4048"
-fg = "#ffffff"
-grey = "#7b8496"
-blue = "#5ea1ff"
-green = "#5eff6c"
-cyan = "#5ef1ff"
-red = "#ff6e5e"
-yellow = "#f1ff5e"
-magenta = "#ff5ef1"
-pink = "#ff5ea0"
-orange = "#ffbd5e"
-purple = "#bd5eff"
 
 [os]
-format = '[󰣇](bold blue) '
+format = '[](bold pine) '
 disabled = false
 
 [os.symbols]
-Arch = '󰣇'
+Arch = ''
 
 [character]
-success_symbol = "[󰋕](green) [❯](cyan)"
-error_symbol = "[󰋕 ❯](red)"
-format = "$symbol "
+success_symbol = "[ ](iris) [󰘧](pine)"
+error_symbol = "[ ❯](love)"
+format = "$symbol"
+
 
 [directory]
+format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)[$read_only]($read_only_style)"
+style = "bg:overlay fg:pine"
 truncation_length = 5
-truncation_symbol = '…/'
-home_symbol = '󰋜 ~'
-read_only = '  '
-format = '[@]($bold fg) [$path]($style)[$read_only]($read_only_style) '
-style = "bold fg"
-read_only_style = "red"
+truncation_symbol = "…/"
+home_symbol = '󰋜 '
+read_only = '  '
+
+[directory.substitutions]
+Downloads = " "
+books = " "
+embedded = " "
+architect = "󰣇 "
+test = '󰙨 '
+
+[fill]
+style = "fg:overlay"
+symbol = " "
 
 [git_branch]
-symbol = ''
-format = '[on](text) [$symbol $branch]($style) '
-style = 'bold green'
+format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) "
+style = "bg:overlay fg:foam"
+symbol = ""
 
 [git_status]
-format = '([$all_status$ahead_behind]($style)) '
-style = 'bold green'
-conflicted = '[🏳](red)'
-# Changed 'peach' to 'orange' from the new palette.
-untracked = '[?](orange)'
-ahead = '[⇡${count}](green)'
-behind = '[⇣${count}](green)'
-diverged = '[⇕⇡${ahead_count}⇣${behind_count}](red)'
-stashed = '[](pink)'
-modified = '[](yellow)'
-staged = '[+](green)'
-# Changed 'peach' to 'orange' from the new palette.
-renamed = '[»](orange)'
-deleted = '[-](red)'
-
+disabled = false
+style = "bg:overlay fg:love"
+format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
+up_to_date = '[ ✓ ](bg:overlay fg:iris)'
+untracked = '[?\($count\)](bg:overlay fg:gold)'
+stashed = '[\$](bg:overlay fg:iris)'
+modified = '[!\($count\)](bg:overlay fg:gold)'
+renamed = '[»\($count\)](bg:overlay fg:iris)'
+deleted = '[✘\($count\)](style)'
+staged = '[++\($count\)](bg:overlay fg:gold)'
+ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
+diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
+behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
+ignore_submodules = true
 [c]
-# Changed 'teal' to 'cyan' as it is the closest equivalent in the new palette.
-style = "bold cyan"
+style = "bg:overlay fg:pine"
+format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
 detect_files = ["CMakeLists.txt", "compile_commands.json"]
+disabled = false
+symbol = " "
 
-[hg_branch]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[nix_shell]
-impure_msg = '[impure shell](bold red)'
-pure_msg = '[pure shell](bold green)'
-unknown_msg = '[unknown shell](bold yellow)'
-format = 'via [ $state( \($name\))](bold blue) '
-
-[package]
-symbol = " "
-
-[python]
-symbol = " "
-format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
-style = "bold yellow"
-pyenv_prefix = "venv "
-python_binary = ["./venv/bin/python", "python", "python3", "python2"]
-detect_extensions = ["py"]
-version_format = "v${raw}"
+[haskell]
+style = "bg:overlay fg:pine"
+format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
+disabled = false
+symbol = " "
 
 [rust]
+style = "bg:overlay fg:pine"
+format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
+disabled = false
 symbol = " "
+
+[python]
+style = "bg:overlay fg:pine"
+format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
+disabled = false
+symbol = ' '

@@ -1,0 +1,53 @@
+theme = "rose"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+shell = ["fish", "-c"]
+trim-final-newlines = true
+trim-trailing-whitespace   = true
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+[editor.whitespace.characters]
+tab = "→"
+
+[editor.whitespace.render]
+tab = "all"
+
+[keys.normal.space]
+space = "file_picker_in_current_buffer_directory"
+
+[keys.normal.space.","]
+d = ":yank-diagnostic"
+c = ":sh chezmoi apply"
+n = ":open ~/misc/notes/quicknotes.md"
+
+[keys.select]
+q = "extend_to_word"
+
+[keys.normal]
+tab = "rotate_view"
+"C-tab" = "goto_next_buffer"
+q = "goto_word"
+"A-q" = ":x"
+"C-q" = ":wbc"
+"C-S-ret" = ":vs"
+"*" = [
+  "move_prev_word_start",
+  "move_next_word_end",
+  "search_selection",
+  "search_next",
+]

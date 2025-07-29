@@ -7,6 +7,10 @@ window-decoration = false
 gtk-single-instance = false
 auto-update = off
 focus-follows-mouse
+
+
+keybind=clear
+
 keybind = alt+enter=new_split:right
 keybind = alt+]=goto_split:next
 keybind = alt+[=goto_split:previous
