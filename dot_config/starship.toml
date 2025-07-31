@@ -1,18 +1,98 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-format = """
-$directory\
-$git_branch\
-$git_status\
-$c\
-$haskell\
-$rust\
-$python\n\
-$character \
-"""
-
-# Use the Catppuccin Mocha palette.
 palette = "catppuccin_mocha"
+
+add_newline = false
+
+command_timeout = 1000
+
+# The order of modules here defines the order they appear in the prompt.
+format = """$os$directory$git_branch$git_status$package$c$lua$zig$python$rust$nix_shell
+$character"""
+
+[os]
+format = '[󰣇](bold blue) '
+disabled = false
+
+[os.symbols]
+Arch = '󰣇'
+
+
+[character]
+success_symbol = "[󰋕](green) [❯](mauve)"
+error_symbol = "[󰋕 ❯](red)"
+format = "$symbol "
+
+
+[directory]
+truncation_length = 5
+truncation_symbol = '…/'
+home_symbol = '󰋜 ~'
+read_only = '  '
+format = '[@]($bold mauve) [$path]($style)[$read_only]($read_only_style) '
+style = "bold mauve"
+read_only_style = "red"
+
+
+[git_branch]
+symbol = ''
+format = '[on](text) [$symbol $branch]($style) '
+style = 'bold green'
+
+
+[git_status]
+format = '([$all_status$ahead_behind]($style)) '
+style = 'bold green'
+conflicted = '[🏳](red)'
+untracked = '[?](peach)'
+ahead = '[⇡${count}](green)'
+behind = '[⇣${count}](green)'
+diverged = '[⇕⇡${ahead_count}⇣${behind_count}](red)'
+stashed = '[](pink)'
+modified = '[](yellow)'
+staged = '[+](green)'
+renamed = '[»](peach)'
+deleted = '[-](red)'
+
+
+[c]
+style = "bold teal" # Changed from cyan
+detect_files = [
+    "CMakeLists.txt",
+    "compile_commands.json"
+]
+
+
+[hg_branch]
+symbol = " "
+
+
+[memory_usage]
+symbol = " "
+
+
+[nix_shell]
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[unknown shell](bold yellow)'
+format = 'via [ $state( \($name\))](bold blue) '
+
+
+[package]
+symbol = " "
+
+
+[python]
+symbol = " "
+format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+
+
+[rust]
+symbol = " "
+
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -41,78 +121,3 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
-
-
-[os]
-# Arch logo colored with green.
-format = '[](bold green) '
-disabled = false
-
-[os.symbols]
-Arch = ''
-
-[character]
-# Success: Mauve checkmark, Green prompt symbol.
-# Error: Red prompt symbol.
-success_symbol = "[ ](mauve) [󰘧](green)"
-error_symbol = "[ ❯](red)"
-
-[directory]
-# Use `surface0` for the background and `blue` for the path text.
-# `blue` provides a clear, neutral indicator for general information like a path.
-style = "bg:surface0 fg:blue"
-truncation_length = 5
-truncation_symbol = "…/"
-home_symbol = '󰋜 '
-read_only = '  '
-
-[directory.substitutions]
-Downloads = " "
-books = " "
-embedded = " "
-architect = "󰣇 "
-test = '󰙨 '
-
-[git_branch]
-# Use `teal` for the branch name, a calm color for info.
-style = "bg:surface0 fg:teal"
-symbol = ""
-
-[git_status]
-# The base style for the git status segment is red, indicating "danger" if unstaged changes exist.
-style = "bg:surface0 fg:red"
-# Use `green` for states that are "good" or "complete".
-up_to_date = '[ ✓ ](bg:surface0 fg:green)'
-staged = '[++\($count\)](bg:surface0 fg:green)'
-# Use `yellow` for states that require attention.
-untracked = '[?\($count\)](bg:surface0 fg:yellow)'
-modified = '[!\($count\)](bg:surface0 fg:yellow)'
-# Use distinct colors for other states.
-stashed = '[\$](bg:surface0 fg:mauve)'
-renamed = '[»\($count\)](bg:surface0 fg:blue)'
-deleted = '[✘\($count\)](style)'                                                                                                                         # Inherits the `red` fg from the parent style.
-ahead = '[⇡\(${count}\)](bg:surface0 fg:sky)'
-behind = '[⇣\(${count}\)](bg:surface0 fg:maroon)'
-diverged = '⇕[\[](bg:surface0 fg:mauve)[⇡\(${ahead_count}\)](bg:surface0 fg:sky)[⇣\(${behind_count}\)](bg:surface0 fg:maroon)[\]](bg:surface0 fg:mauve)'
-
-# Assign colors to language modules based on common associations.
-[c]
-# Blue is often associated with C/C++.
-style = "bg:surface0 fg:blue"
-detect_files = ["CMakeLists.txt", "compile_commands.json"]
-symbol = " "
-
-[haskell]
-# Mauve for functional languages.
-style = "bg:surface0 fg:mauve"
-symbol = " "
-
-[rust]
-# Peach (orange) is the official color for Rust.
-style = "bg:surface0 fg:peach"
-symbol = " "
-
-[python]
-# Yellow is strongly associated with Python.
-style = "bg:surface0 fg:yellow"
-symbol = ' '
