@@ -1,4 +1,4 @@
-theme = "rose"
+theme = "cat"
 
 [editor]
 line-number = "relative"
@@ -7,7 +7,7 @@ color-modes = true
 bufferline = "multiple"
 shell = ["fish", "-c"]
 trim-final-newlines = true
-trim-trailing-whitespace   = true
+trim-trailing-whitespace = true
 end-of-line-diagnostics = "hint"
 
 [editor.inline-diagnostics]
@@ -44,7 +44,6 @@ q = "extend_to_word"
 ")" = "goto_line_end"
 tab = "rotate_view"
 "C-tab" = "goto_next_buffer"
-q = "goto_word"
 "C-d" = ":wbc"
 "C-S-ret" = ":vs"
 "*" = [

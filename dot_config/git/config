@@ -4,7 +4,7 @@
 [color]
   ui = auto
 [core]
-	editor = nvim
+	editor = hx
 	pager = delta
 	preloadIndex = true
 [interactive]
