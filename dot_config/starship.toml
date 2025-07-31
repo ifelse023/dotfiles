@@ -7,38 +7,60 @@ $git_status\
 $c\
 $haskell\
 $rust\
-$python\n \
+$python\n\
 $character \
 """
 
-palette = "rose-pine"
+# Use the Catppuccin Mocha palette.
+palette = "catppuccin_mocha"
 
-[palettes.rose-pine]
-overlay = '#26233a'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ebbcba'
-pine = '#31748f'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
 
 
 [os]
-format = '[](bold pine) '
+# Arch logo colored with green.
+format = '[](bold green) '
 disabled = false
 
 [os.symbols]
 Arch = ''
 
 [character]
-success_symbol = "[ ](iris) [󰘧](pine)"
-error_symbol = "[ ❯](love)"
-format = "$symbol"
-
+# Success: Mauve checkmark, Green prompt symbol.
+# Error: Red prompt symbol.
+success_symbol = "[ ](mauve) [󰘧](green)"
+error_symbol = "[ ❯](red)"
 
 [directory]
-format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)[$read_only]($read_only_style)"
-style = "bg:overlay fg:pine"
+# Use `surface0` for the background and `blue` for the path text.
+# `blue` provides a clear, neutral indicator for general information like a path.
+style = "bg:surface0 fg:blue"
 truncation_length = 5
 truncation_symbol = "…/"
 home_symbol = '󰋜 '
@@ -51,51 +73,46 @@ embedded = " "
 architect = "󰣇 "
 test = '󰙨 '
 
-[fill]
-style = "fg:overlay"
-symbol = " "
-
 [git_branch]
-format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) "
-style = "bg:overlay fg:foam"
+# Use `teal` for the branch name, a calm color for info.
+style = "bg:surface0 fg:teal"
 symbol = ""
 
 [git_status]
-disabled = false
-style = "bg:overlay fg:love"
-format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
-up_to_date = '[ ✓ ](bg:overlay fg:iris)'
-untracked = '[?\($count\)](bg:overlay fg:gold)'
-stashed = '[\$](bg:overlay fg:iris)'
-modified = '[!\($count\)](bg:overlay fg:gold)'
-renamed = '[»\($count\)](bg:overlay fg:iris)'
-deleted = '[✘\($count\)](style)'
-staged = '[++\($count\)](bg:overlay fg:gold)'
-ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
-diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
-behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
-ignore_submodules = true
+# The base style for the git status segment is red, indicating "danger" if unstaged changes exist.
+style = "bg:surface0 fg:red"
+# Use `green` for states that are "good" or "complete".
+up_to_date = '[ ✓ ](bg:surface0 fg:green)'
+staged = '[++\($count\)](bg:surface0 fg:green)'
+# Use `yellow` for states that require attention.
+untracked = '[?\($count\)](bg:surface0 fg:yellow)'
+modified = '[!\($count\)](bg:surface0 fg:yellow)'
+# Use distinct colors for other states.
+stashed = '[\$](bg:surface0 fg:mauve)'
+renamed = '[»\($count\)](bg:surface0 fg:blue)'
+deleted = '[✘\($count\)](style)'                                                                                                                         # Inherits the `red` fg from the parent style.
+ahead = '[⇡\(${count}\)](bg:surface0 fg:sky)'
+behind = '[⇣\(${count}\)](bg:surface0 fg:maroon)'
+diverged = '⇕[\[](bg:surface0 fg:mauve)[⇡\(${ahead_count}\)](bg:surface0 fg:sky)[⇣\(${behind_count}\)](bg:surface0 fg:maroon)[\]](bg:surface0 fg:mauve)'
+
+# Assign colors to language modules based on common associations.
 [c]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
+# Blue is often associated with C/C++.
+style = "bg:surface0 fg:blue"
 detect_files = ["CMakeLists.txt", "compile_commands.json"]
-disabled = false
 symbol = " "
 
 [haskell]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
+# Mauve for functional languages.
+style = "bg:surface0 fg:mauve"
 symbol = " "
 
 [rust]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
+# Peach (orange) is the official color for Rust.
+style = "bg:surface0 fg:peach"
 symbol = " "
 
 [python]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
+# Yellow is strongly associated with Python.
+style = "bg:surface0 fg:yellow"
 symbol = ' '

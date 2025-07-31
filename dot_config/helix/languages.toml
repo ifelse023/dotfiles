@@ -1,8 +1,9 @@
 [use-grammars]
 only = [
   "asm",
-  "nasm",
   "bash",
+  "ld",
+  "ghostty",
   "fish",
   "c",
   "cpp",
@@ -10,16 +11,12 @@ only = [
   "gitconfig",
   "html",
   "ini",
-  "java",
   "json",
   "jsonc",
-  "kdl",
-  "lua",
   "markdown",
   "markdown_inline",
   "hyprlang",
   "printf",
-  "nasm",
   "nix",
   "just",
   "query",
@@ -27,13 +24,14 @@ only = [
   "python",
   "regex",
   "rust",
-  "sql",
   "toml",
-  "x86asm",
   "yaml",
   "zig",
+  "gas"
 ]
-
+[[grammar]]
+name = "asm"
+source = { git = "https://github.com/rush-rs/tree-sitter-asm", rev = "04962e15f6b464cf1d75eada59506dc25090e186" }
 [[language]]
 name = "c"
 auto-format = true
@@ -44,6 +42,21 @@ formatter = { command = "clang-format" }
 name = "nix"
 auto-format = true
 
+[[language]]
+name = "gas"
+comment-token = "//"
+
+
+# [[language]]
+# name = "asm"
+# language-servers = ["asm"]
+# scope = "source.asm"
+# file-types = ["S", "s", "asm"]
+# roots = []
+# comment-token = "//"
+
+# [language-server.asm]
+# command = "asm-lsp"
 
 [language-server.clangd]
 command = "clangd"

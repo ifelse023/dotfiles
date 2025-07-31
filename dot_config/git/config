@@ -4,11 +4,11 @@
 [color]
   ui = auto
 [core]
-	editor = helix
+	editor = nvim
 	pager = delta
 	preloadIndex = true
 [interactive]
-    diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [alias]
 	co = checkout
 	br = branch
@@ -17,11 +17,18 @@
 [init]
 	defaultBranch = main
 [diff]
-	tool = vimdiff
+	tool = delta
 [difftool]
 	prompt = false
 [delta]
-    navigate = true  # use n and N to move between diff sections
+	navigate = true
     dark = true
+	line-numbers = true
+	syntax-theme = Monokai Extended
 [merge]
     conflictstyle = zdiff3
+	tool = delta
+[difftool "delta"]
+	cmd = delta \"$LOCAL\" \"$REMOTE\"
+[mergetool "delta"]
+	cmd = delta --color-only --whitespace-error-style=22 \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"

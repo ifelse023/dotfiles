@@ -11,7 +11,7 @@ export PICO_SDK_PATH="$HOME/dev/lib/sdk"
 
 export CC=clang
 export CXX=clang++
-export EDITOR=helix
+export EDITOR=nvim
 export PAGER="bat --paging=always --style=plain"
 
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude .git"

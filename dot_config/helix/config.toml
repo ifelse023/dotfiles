@@ -8,9 +8,10 @@ bufferline = "multiple"
 shell = ["fish", "-c"]
 trim-final-newlines = true
 trim-trailing-whitespace   = true
+end-of-line-diagnostics = "hint"
 
-[editor.lsp]
-display-inlay-hints = true
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
 
 [editor.cursor-shape]
 insert = "bar"
@@ -39,11 +40,12 @@ n = ":open ~/misc/notes/quicknotes.md"
 q = "extend_to_word"
 
 [keys.normal]
+0 = "goto_line_start"
+")" = "goto_line_end"
 tab = "rotate_view"
 "C-tab" = "goto_next_buffer"
 q = "goto_word"
-"A-q" = ":x"
-"C-q" = ":wbc"
+"C-d" = ":wbc"
 "C-S-ret" = ":vs"
 "*" = [
   "move_prev_word_start",
