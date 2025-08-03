@@ -9,8 +9,6 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
 export PICO_SDK_PATH="$HOME/dev/lib/sdk"
 
-export CC=clang
-export CXX=clang++
 export EDITOR=hx
 export PAGER="bat --paging=always --style=plain"
 

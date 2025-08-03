@@ -28,27 +28,34 @@ tab = "→"
 [editor.whitespace.render]
 tab = "all"
 
+[keys.normal]
+tab = "rotate_view"
+"A-q" = ":wbc"
+"A-tab"="goto_next_buffer"
+ret = "goto_word"
+
+
+[keys.normal.C-y]
+space = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open %{buffer_name}"
+v = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh vsplit %{buffer_name}"
+h = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh hsplit %{buffer_name}"
+
+
+[keys.select]
+"ret" = "extend_to_word"
+
 [keys.normal.space]
-space = "file_picker_in_current_buffer_directory"
+space = "align_view_center"
 
 [keys.normal.space.","]
 d = ":yank-diagnostic"
 c = ":sh chezmoi apply"
 n = ":open ~/misc/notes/quicknotes.md"
 
-[keys.select]
-q = "extend_to_word"
 
-[keys.normal]
-0 = "goto_line_start"
-")" = "goto_line_end"
-tab = "rotate_view"
-"C-tab" = "goto_next_buffer"
-"C-d" = ":wbc"
-"C-S-ret" = ":vs"
-"*" = [
-  "move_prev_word_start",
-  "move_next_word_end",
-  "search_selection",
-  "search_next",
-]
+# [keys.normal.g]
+# ret = "goto_word"
+# l = "goto_word"
+
+# [keys.select.g]
+# ret = "extend_to_word"

@@ -17,8 +17,12 @@ Arch = '󰣇'
 
 
 [character]
-success_symbol = "[ ](mauve) [󰘧](green)"
-error_symbol = "[ 󰘧](red)"
+success_symbol = "[ ](fg:mauve) [󰘧](fg:green)"
+error_symbol = "[ 󰘧](fg:red)"
+vimcmd_symbol = "[  ❮](bold fg:green)"
+vimcmd_visual_symbol = "[  ▼](bold fg:yellow)"
+vimcmd_replace_symbol = "[  ](bold fg:lavender)"
+vimcmd_replace_one_symbol = "[  ](bold fg:lavender)"
 format = "$symbol "
 
 
@@ -66,9 +70,11 @@ pure_msg = '[pure shell](bold green)'
 unknown_msg = '[unknown shell](bold yellow)'
 format = 'via [ $state( \($name\))](bold blue) '
 
-# [rust]
-# symbol = " "
+[rust]
+symbol = " "
 
+[python]
+symbol = " "
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
