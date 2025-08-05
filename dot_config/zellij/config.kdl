@@ -1,6 +1,6 @@
 keybinds clear-defaults=true {
     normal {
-        bind "Alt Shift k" {
+        bind "Alt Shift d" {
             Detach
         }
         bind "Alt /" {
@@ -9,7 +9,7 @@ keybinds clear-defaults=true {
         bind "Ctrl /" {
             ToggleFloatingPanes
         }
-        bind "Alt Shift Tab" {
+        bind "Alt Tab" {
             GoToNextTab
         }
         bind "Ctrl Enter" {
@@ -39,12 +39,10 @@ keybinds clear-defaults=true {
             GoToTab 5
             SwitchToMode "Normal"
         }
-
         bind "Alt 6" {
             GoToTab 6
             SwitchToMode "Normal"
         }
-
         bind "Alt 7" {
             GoToTab 7
             SwitchToMode "Normal"
@@ -259,7 +257,7 @@ keybinds clear-defaults=true {
         bind "l" {
             Resize "Increase right"
         }
-        bind "Ctrl Alt n" {
+        bind "Ctrl n" {
             SwitchToMode "normal"
         }
     }
@@ -343,7 +341,7 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
-        bind "Ctrl Alt o" {
+        bind "Ctrl o" {
             SwitchToMode "normal"
         }
         bind "p" {
@@ -377,7 +375,7 @@ keybinds clear-defaults=true {
             BreakPaneRight
             SwitchToMode "normal"
         }
-        bind "Ctrl Alt b" {
+        bind "Ctrl b" {
             BreakPane
             SwitchToMode "normal"
         }
@@ -393,10 +391,10 @@ keybinds clear-defaults=true {
         bind "Alt right" {
             MoveFocusOrTab "right"
         }
-        bind "Ctrl Alt +" {
+        bind "Ctrl +" {
             Resize "Increase"
         }
-        bind "Ctrl Alt -" {
+        bind "Ctrl -" {
             Resize "Decrease"
         }
         bind "Alt =" {
@@ -434,7 +432,7 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" "session" {
-        bind "Ctrl Alt o" {
+        bind "Ctrl o" {
             SwitchToMode "session"
         }
     }
@@ -442,7 +440,7 @@ keybinds clear-defaults=true {
     //     bind "Ctrl b" { SwitchToMode "tmux"; }
     // }
     shared_except "locked" "scroll" "search" {
-        bind "Ctrl Alt s" {
+        bind "Ctrl s" {
             SwitchToMode "scroll"
         }
     }
@@ -451,14 +449,13 @@ keybinds clear-defaults=true {
             SwitchToMode "tab"
         }
     }
-
     shared_except "locked" "pane" {
         bind "Ctrl p" {
             SwitchToMode "pane"
         }
     }
     shared_except "locked" "resize" {
-        bind "Ctrl Alt n" {
+        bind "Ctrl n" {
             SwitchToMode "resize"
         }
     }
@@ -472,7 +469,7 @@ keybinds clear-defaults=true {
             SwitchToMode "normal"
         }
     }
-    shared_among "pane"{
+    shared_among "pane" {
         bind "x" {
             CloseFocus
             SwitchToMode "normal"
@@ -522,7 +519,7 @@ keybinds clear-defaults=true {
         bind "l" {
             PageScrollDown
         }
-        bind "Ctrl Alt s" {
+        bind "Ctrl s" {
             SwitchToMode "normal"
         }
         bind "u" {
@@ -562,7 +559,6 @@ keybinds clear-defaults=true {
             Detach
         }
     }
-
 }
 // Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect
@@ -599,8 +595,7 @@ web_client {
 // simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
-
-theme "tokyo-night"
+theme "tokyo-night-dark"
 //
 // Choose the base input mode of zellij.
 // Default: normal
@@ -609,7 +604,7 @@ theme "tokyo-night"
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-default_shell "fish"
+default_shell "/usr/bin/fish"
 // Choose the path to override cwd that zellij will use for opening new panes
 //
 // default_cwd "/tmp"
@@ -669,8 +664,8 @@ pane_frames false
 // Examples:
 //
 // copy_command "xclip -selection clipboard" // x11
-// copy_command "wl-copy"                    // wayland
-// copy_command "pbcopy"                     // osx
+copy_command "wl-copy"
+ // wayland// copy_command "pbcopy"                     // osx
 //
 // copy_command "pbcopy"
 // Choose the destination for copied text
@@ -684,21 +679,21 @@ pane_frames false
 // Enable automatic copying (and clearing) of selection when releasing mouse
 // Default: true
 //
-// copy_on_select true
+copy_on_select true
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
-// scrollback_editor "/usr/bin/vim"
+scrollback_editor "/usr/bin/hx"
 // A fixed name to always give the Zellij session.
 // Consider also setting `attach_to_session true,`
 // otherwise this will error if such a session exists.
 // Default: <RANDOM>
 //
-// session_name "My singleton session"
+session_name "main"
 // When `session_name` is provided, attaches to that session
 // if it is already running or creates it otherwise.
 // Default: false
 //
-// attach_to_session true
+attach_to_session true
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
 //   - true (default)

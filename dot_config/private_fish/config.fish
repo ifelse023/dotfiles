@@ -1,6 +1,15 @@
 if status is-interactive
-    set -gx ZELLIJ_AUTO_ATTACH true # one persistent session
-    eval (zellij setup --generate-auto-start fish | string collect)
+    set -gx ZELLIJ_AUTO_ATTACH true
+    if not set -q ZELLIJ
+        if test "$ZELLIJ_AUTO_ATTACH" = true
+            zellij attach --create main
+        else
+            zellij --session main
+        end
+        # if test "$ZELLIJ_AUTO_EXIT" = true
+        #     kill $fish_pid
+        # end
+    end
 
     set fish_greeting ""
     starship init fish | source

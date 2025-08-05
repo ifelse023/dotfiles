@@ -1,4 +1,5 @@
 inline_height = 16
+style = "compact"
 update_check = false
 invert = false
 enter_accept = true

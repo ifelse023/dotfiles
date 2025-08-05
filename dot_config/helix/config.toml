@@ -1,4 +1,4 @@
-theme = "cat"
+theme = "tokyo"
 
 [editor]
 line-number = "relative"
@@ -31,12 +31,11 @@ tab = "all"
 [keys.normal]
 tab = "rotate_view"
 "A-q" = ":wbc"
-"A-tab"="goto_next_buffer"
+"A-tab" = "goto_next_buffer"
 ret = "goto_word"
 
-
-[keys.normal.C-y]
-space = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open %{buffer_name}"
+[keys.normal.space."."]
+space = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 90%% --height 90%% -- bash ~/.config/helix/yazi-picker.sh open %{buffer_name}"
 v = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh vsplit %{buffer_name}"
 h = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh hsplit %{buffer_name}"
 
@@ -49,13 +48,5 @@ space = "align_view_center"
 
 [keys.normal.space.","]
 d = ":yank-diagnostic"
-c = ":sh chezmoi apply"
+c = [":sh chezmoi apply"]
 n = ":open ~/misc/notes/quicknotes.md"
-
-
-# [keys.normal.g]
-# ret = "goto_word"
-# l = "goto_word"
-
-# [keys.select.g]
-# ret = "extend_to_word"
