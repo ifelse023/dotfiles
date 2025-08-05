@@ -9,7 +9,7 @@ keybinds clear-defaults=true {
         bind "Ctrl /" {
             ToggleFloatingPanes
         }
-        bind "Alt Tab" {
+        bind "Alt Shift Tab" {
             GoToNextTab
         }
         bind "Ctrl Enter" {
@@ -170,10 +170,10 @@ keybinds clear-defaults=true {
             GoToTab 9
             SwitchToMode "normal"
         }
-        bind "Alt o" {
+        bind "Ctrl Alt o" {
             MoveTab "right"
         }
-        bind "Alt i" {
+        bind "Ctrl Alt i" {
             MoveTab "left"
         }
         bind "h" {
@@ -277,7 +277,7 @@ keybinds clear-defaults=true {
         bind "h" {
             MovePane "left"
         }
-        bind "Ctrl h" {
+        bind "Ctrl Alt h" {
             SwitchToMode "normal"
         }
         bind "j" {
@@ -341,7 +341,7 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
-        bind "Ctrl o" {
+        bind "Ctrl Alt o" {
             SwitchToMode "normal"
         }
         bind "p" {
@@ -375,7 +375,7 @@ keybinds clear-defaults=true {
             BreakPaneRight
             SwitchToMode "normal"
         }
-        bind "Ctrl b" {
+        bind "Ctrl Alt b" {
             BreakPane
             SwitchToMode "normal"
         }
@@ -409,16 +409,16 @@ keybinds clear-defaults=true {
         bind "Ctrl g" {
             SwitchToMode "locked"
         }
-        bind "Alt h" {
+        bind "Ctrl Alt left" {
             MoveFocus "left"
         }
-        bind "Alt j" {
+        bind "Ctrl Alt down" {
             MoveFocus "down"
         }
-        bind "Alt k" {
+        bind "Ctrl Alt up" {
             MoveFocus "up"
         }
-        bind "Alt l" {
+        bind "Ctrl Alt right" {
             MoveFocus "right"
         }
         // bind "Alt p" { TogglePaneInGroup; }
@@ -427,12 +427,12 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" "move" {
-        bind "Ctrl h" {
+        bind "Ctrl Alt h" {
             SwitchToMode "move"
         }
     }
     shared_except "locked" "session" {
-        bind "Ctrl o" {
+        bind "Ctrl Alt o" {
             SwitchToMode "session"
         }
     }
@@ -440,7 +440,7 @@ keybinds clear-defaults=true {
     //     bind "Ctrl b" { SwitchToMode "tmux"; }
     // }
     shared_except "locked" "scroll" "search" {
-        bind "Ctrl s" {
+        bind "Ctrl Alt s" {
             SwitchToMode "scroll"
         }
     }
@@ -494,17 +494,17 @@ keybinds clear-defaults=true {
         bind "right" {
             PageScrollDown
         }
-        bind "Ctrl b" {
+        bind "Ctrl Alt b" {
             PageScrollUp
         }
-        bind "Ctrl c" {
+        bind "Ctrl Alt c" {
             ScrollToBottom
             SwitchToMode "normal"
         }
         bind "d" {
             HalfPageScrollDown
         }
-        bind "Ctrl f" {
+        bind "Ctrl Alt f" {
             PageScrollDown
         }
         bind "h" {
@@ -519,7 +519,7 @@ keybinds clear-defaults=true {
         bind "l" {
             PageScrollDown
         }
-        bind "Ctrl s" {
+        bind "Ctrl Alt s" {
             SwitchToMode "normal"
         }
         bind "u" {
@@ -527,7 +527,7 @@ keybinds clear-defaults=true {
         }
     }
     entersearch {
-        bind "Ctrl c" {
+        bind "Ctrl Alt c" {
             SwitchToMode "scroll"
         }
         bind "esc" {
@@ -544,7 +544,7 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "renametab" "renamepane" {
-        bind "Ctrl c" {
+        bind "Ctrl Alt c" {
             SwitchToMode "normal"
         }
     }
