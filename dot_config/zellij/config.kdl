@@ -6,6 +6,9 @@ keybinds clear-defaults=true {
         bind "Alt /" {
             FocusNextPane
         }
+        bind "Alt q" {
+            CloseFocus
+        }
         bind "Ctrl /" {
             ToggleFloatingPanes
         }
@@ -574,9 +577,6 @@ plugins {
     status-bar location="zellij:status-bar"
     strider location="zellij:strider"
     tab-bar location="zellij:tab-bar"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
 }
 // Plugins to load in the background when a new session starts
 // eg. "file:/path/to/my-plugin.wasm"
@@ -595,7 +595,9 @@ web_client {
 // simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
-theme "tokyo-night-dark"
+//
+
+theme "dracula"
 //
 // Choose the base input mode of zellij.
 // Default: normal
@@ -682,7 +684,7 @@ copy_command "wl-copy"
 copy_on_select true
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
-scrollback_editor "/usr/bin/hx"
+scrollback_editor "/usr/bin/nvim"
 // A fixed name to always give the Zellij session.
 // Consider also setting `attach_to_session true,`
 // otherwise this will error if such a session exists.
