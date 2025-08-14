@@ -69,13 +69,13 @@ function mkdir-cd --argument dir
     and cd -- $dir
 end
 
-function restore --argument-names file
-    set original (string replace '.bak' '' -- "$file")
-    mv -- "$file" "$original"
+function restore -a file
+    set original (string replace -r '\.bak$' '' -- "$file")
+    mv -n -- "$file" "$original"
 end
 
-function backup --argument-names filename
-    mv -- "$filename" "$filename.bak"
+function backup -a filename
+    mv -n -- "$filename" "$filename.bak"
 end
 
 function cpr

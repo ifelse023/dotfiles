@@ -52,7 +52,7 @@ renamed = '[»](orange)'
 deleted = '[-](red)'
 
 [c]
-style = "bg:current_line fg:blue"
+style = " fg:blue"
 detect_files = ["CMakeLists.txt", "compile_commands.json"]
 disabled = false
 symbol = " "
