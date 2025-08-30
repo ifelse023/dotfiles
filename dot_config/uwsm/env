@@ -6,11 +6,14 @@ export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 
 export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
-export PICO_SDK_PATH="$HOME/dev/lib/sdk"
+export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME"/npm/config/npm-init.js
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
+export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
 
-export EDITOR=nvim
-export VISUAL=neovide
+export EDITOR="neovide --no-fork"
+export VISUAL="neovide --no-fork"
 export PAGER="bat --paging=always --style=plain"
 
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude .git"
@@ -20,12 +23,11 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --info=inline-right \
   --ansi \
   --layout=reverse \
---color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
---color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
---color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
---color=selected-bg:#45475A \
---color=border:#6C7086,label:#CDD6F4"
-
+  --color=bg+:#3c4048,bg:#000000,spinner:#ff5ea0,hl:#5eff6c \
+  --color=fg:#ffffff,header:#5ea1ff,info:#f1ff5e,pointer:#ff5ef1 \
+  --color=marker:#5eff6c,fg+:#ffffff,prompt:#5ef1ff,hl+:#5eff6c \
+  --color=selected-bg:#1e2124 \
+  --color=border:#7b8496,label:#ffffff"
 
 export XDG_SESSION_TYPE=wayland
 export GDK_BACKEND=wayland

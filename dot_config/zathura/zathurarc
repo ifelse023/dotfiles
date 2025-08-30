@@ -1,3 +1,4 @@
 set selection-clipboard clipboard
 set font "JetBrains Mono 12"
-include mocha
+
+# include mocha

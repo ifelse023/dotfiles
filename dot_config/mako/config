@@ -1,24 +1,21 @@
-layer=top
-markup=1
-anchor=top-right
-background-color=#1e1e2e
-text-color=#cdd6f4
-width=450
-height=200
-max-icon-size=96
-icon-location=right
-margin=20,20,0
-padding=15,15,15
+text-color=#a9b1d6
+border-color=#33ccff
+background-color=#1a1b26
+width=420
+height=110
+padding=10
 border-size=2
-border-color=#89b4fa
-border-radius=15
-progress-color=over #313244
-default-timeout=10000
-group-by=summary
-format=<span font="JetBrains Mono weight=325 Italic" size="12288">%s</span>\n<span font="JetBrains Mono weight=325" size="12288">%b</span>
+font=Liberation Sans 11
+anchor=top-right
+outer-margin=20
+default-timeout=5000
+max-icon-size=32
 
-[grouped]
-format=<span font="font=JetBrains Mono weight=325 Italic" size="12288">%s</span>\n<span font="JetBrains Mono weight=325" size="12288">%b</span>
+[app-name=Spotify]
+invisible=1
 
 [mode=do-not-disturb]
-invisible=1
+invisible=true
+
+[mode=do-not-disturb app-name=notify-send]
+invisible=false
