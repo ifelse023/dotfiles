@@ -1,23 +1,25 @@
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$UID}"
+
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 
 export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
-export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME"/npm/config/npm-init.js
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
-export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
+export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME/npm/config/npm-init.js"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 
-export EDITOR="neovide --no-fork"
-export VISUAL="neovide --no-fork"
+export EDITOR="hx"
+export VISUAL="hx"
 export PAGER="bat --paging=always --style=plain"
 
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude .git"
-
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --highlight-line \
   --info=inline-right \
@@ -29,12 +31,12 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=selected-bg:#1e2124 \
   --color=border:#7b8496,label:#ffffff"
 
-export XDG_SESSION_TYPE=wayland
-export GDK_BACKEND=wayland
+export XDG_SESSION_TYPE="wayland"
+export XDG_CURRENT_DESKTOP="niri"
+export DISPLAY=":0"
+export GDK_BACKEND="wayland"
+export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 export QT_QPA_PLATFORM="wayland;xcb"
-export QT_QPA_PLATFORMTHEME=qt6ct
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-
-export HYPRCURSOR_SIZE=24
-export HYPRCURSOR_THEME=rose-pine-hyprcursor
+export QT_QPA_PLATFORMTHEME="qt6ct"
+export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+export QT_AUTO_SCREEN_SCALE_FACTOR="1"

@@ -4,7 +4,7 @@
 [color]
   ui = auto
 [core]
-	editor = neovide --nofork
+	editor = hx --nofork
 	pager = delta
 	preloadIndex = true
 [interactive]

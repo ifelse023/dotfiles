@@ -1,0 +1,8 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "ifelse023"
+email = "162376926+ifelse023@users.noreply.github.com"
+
+[git]
+push-new-bookmarks = true

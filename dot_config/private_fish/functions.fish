@@ -47,7 +47,7 @@ end
 function xx
     set file (fd --type f --hidden --exclude .git | fzf --preview 'bat --color=always --style=numbers {}')
     if test -n "$file"
-        uwsm app -- neovide "$file"
+        uwsm app -- hx "$file"
     end
 end
 
